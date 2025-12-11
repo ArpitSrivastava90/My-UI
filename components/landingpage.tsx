@@ -98,13 +98,40 @@ const Main = () => {
       <div
         className={`TextDiv mt-30 h-70 w-7xl ${cosuine.className} text-shadow-2xs text-white/80 text-6xl flex justify-center items-center`}
       >
-        <h1>Clean Components. No Fluff</h1>
+        <motion.h1
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+            animationDelay: 0.23,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeIn",
+          }}
+        >
+          Clean Components. No Fluff
+        </motion.h1>
       </div>
 
       <div className="FootDiv w-full h-20 flex items-center justify-end p-4">
-        <h1 className="size-15 bg-white rounded-full flex justify-center items-center">
+        <motion.h1
+          initial={{ y: 0 }}
+          animate={{
+            y: [0, -35, 0, -15, 0, 0], // Jump high, land, jump low, land, wait.
+          }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            times: [0, 0.3, 0.5, 0.65, 0.8, 1], // Controls the speed of each stage
+            repeat: Infinity,
+            repeatDelay: 1, // Pauses for 1 second before restarting
+          }}
+          className="size-15 bg-white rounded-full flex justify-center items-center"
+        >
           <HiMiniArrowDown className="size-10" />
-        </h1>
+        </motion.h1>
       </div>
     </div>
   );
