@@ -34,9 +34,8 @@ const Page = () => {
           <motion.div
             layoutId="CreateCard"
             className="relative flex h-[340px] w-[360px] flex-col overflow-hidden rounded-3xl bg-white shadow-2xl"
-            transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+            transition={{ ease: 'linear', duration: 0.2 }}
           >
-            
             <div className="flex w-full items-center justify-between p-6 pb-4">
               <div className="flex items-center gap-x-3">
                 <motion.div
@@ -49,7 +48,7 @@ const Page = () => {
 
                 <motion.h1
                   layoutId="text-create"
-                  className="text-2xl font-bold text-gray-500"
+                  className="text-lg font-bold text-gray-500"
                 >
                   Create
                 </motion.h1>
@@ -113,7 +112,7 @@ const Page = () => {
             layoutId="CreateCard"
             onClick={() => setisClicked(true)}
             className="flex h-16 w-48 cursor-pointer items-center justify-center gap-x-3 rounded-full bg-white text-gray-700 hover:bg-gray-50"
-            transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+            transition={{ ease: 'linear', duration: 0.2 }}
           >
             <motion.div
               layoutId="icon-plus"
@@ -121,7 +120,7 @@ const Page = () => {
             >
               <FaPlus size={18} />
             </motion.div>
-            <motion.h1 layoutId="text-create" className="text-lg font-semibold">
+            <motion.h1 layoutId="text-create" className="text-xl font-semibold">
               Create
             </motion.h1>
           </motion.button>
