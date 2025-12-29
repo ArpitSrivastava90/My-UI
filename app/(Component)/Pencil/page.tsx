@@ -1,5 +1,7 @@
 'use client';
 import { motion, useAnimate } from 'motion/react';
+import Link from 'next/link';
+import { RiArrowLeftLine } from 'react-icons/ri';
 
 const Page = () => {
   const [scope, animate] = useAnimate();
@@ -70,6 +72,18 @@ const Page = () => {
 
   return (
     <div className="flex h-screen w-full items-center justify-center bg-gray-200">
+      <div className="absolute top-6 left-6 z-50">
+        <Link href="/">
+          <motion.div
+            whileHover={{ scale: 1.05, x: -3 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-neutral-600 shadow-sm transition-colors hover:border-neutral-300 hover:text-black"
+          >
+            <RiArrowLeftLine />
+            <span className="text-sm font-medium">Home</span>
+          </motion.div>
+        </Link>
+      </div>
       <motion.div
         onMouseEnter={StartAnimation}
         ref={scope}
