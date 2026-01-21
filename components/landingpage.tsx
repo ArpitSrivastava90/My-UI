@@ -50,6 +50,7 @@ const MenuOverlay = ({
     { Id: 2, Name: 'Draft', url: 'Pencil' },
     { Id: 3, Name: 'Action Toggle', url: 'Action' },
     { Id: 4, Name: 'Motio-Nav', url: 'motion-nav' },
+    { Id: 5, Name: 'Tag Component', url: 'Tag' },
   ];
 
   return (
