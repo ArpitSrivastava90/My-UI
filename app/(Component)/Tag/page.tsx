@@ -6,6 +6,8 @@ import { cn } from '../motion-nav/page';
 import { AnimatePresence, motion } from 'motion/react';
 import { DiMongodb, DiNodejs, DiPostgresql, DiRedis } from 'react-icons/di';
 import { SiPrisma, SiSupabase } from 'react-icons/si';
+import { CiMonitor } from 'react-icons/ci';
+import { CgSmartphone } from 'react-icons/cg';
 const kodchasan = Kodchasan({
   subsets: ['latin'],
   weight: '400',
@@ -320,7 +322,64 @@ const Page = () => {
 
   return (
     <div className="flex h-screen w-full items-center justify-center bg-neutral-950">
-      <div className="h-96 w-[380px] xl:w-xl">
+      <div
+        className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-black p-6 text-white md:hidden ${kodchasan.className}`}
+      >
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute -top-10 -left-10 h-64 w-64 rounded-full bg-indigo-500/20 blur-[100px]" />
+          <div className="absolute -right-10 -bottom-10 h-64 w-64 rounded-full bg-purple-500/20 blur-[100px]" />
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.5, type: 'spring' }}
+          className="relative z-10 flex w-full max-w-sm flex-col items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-8 py-12 shadow-2xl backdrop-blur-xl"
+        >
+          <div className="relative mb-8 flex h-24 w-24 items-center justify-center">
+            {/* Pulsing Rings */}
+            <motion.div
+              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0, 0.3] }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute inset-0 rounded-full bg-white/10"
+            />
+
+            <motion.div
+              animate={{ y: [-5, 5, -5] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              className="z-10 text-white"
+            >
+              <CiMonitor size={48} strokeWidth={1.5} />
+            </motion.div>
+
+            <div className="absolute -right-2 -bottom-2 flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20 text-red-400 shadow-lg ring-1 ring-red-500/30 backdrop-blur-md">
+              <CgSmartphone size={16} />
+            </div>
+          </div>
+
+          {/* Text Content */}
+          <h2 className="mb-2 text-2xl font-bold tracking-wide">
+            Desktop Only
+          </h2>
+
+          <p className="mb-6 text-center text-lg text-zinc-400">
+            navbar is only for website sowwy dear{' '}
+            <span className="inline-block animate-pulse">:(</span>
+          </p>
+
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: '50%' }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="h-0.5 bg-linear-to-r from-transparent via-white/20 to-transparent"
+          />
+
+          <p className="mt-6 text-xs font-light text-zinc-600">
+            Please open on a larger screen
+          </p>
+        </motion.div>
+      </div>
+      <div className="hidden h-96 w-[380px] md:block xl:w-xl">
         <div className="ml-2 h-8 overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.h1
