@@ -20,7 +20,7 @@ export function cn(...inputs: ClassValue[]) {
 
 const Navbar = () => {
   const NavArray = [
-    { id: 0, itemName: 'Home', url: '/motion-nav' },
+    { id: 0, itemName: 'Home', url: '/' },
     { id: 1, itemName: 'Dashboard', url: '/motion-nav' },
     { id: 2, itemName: 'Signup', url: '/motion-nav' },
     { id: 3, itemName: 'About', url: '/motion-nav' },
